@@ -206,7 +206,9 @@ devscripts/                     开发期用过的一次性分析脚本（不参
 ```
 
 更细的工程笔记见 [`DEVELOPMENT.md`](DEVELOPMENT.md)。
-此项目一整个由Deepseek v4.1-Flash独立制作，我只给出了必要的方向
+
+此项目的全部代码，构建，大量测试由Deepseek v4.1-Flash制作/测试，我只给出了必要的方向
+
 你可以让AI读DEVELOMENT.md来继续这个项目（已经脱敏）
 
 ---
