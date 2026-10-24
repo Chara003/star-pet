@@ -213,7 +213,6 @@ devscripts/                     开发期用过的一次性分析脚本（不参
 
 本项目代码以 **MIT** 发布，见 [`LICENSE`](LICENSE)。
 
-- 发布前请把 `LICENSE` 里的 `<YOUR NAME HERE>` 换成你的名字/ID
 - 第三方组件（three.js、Ammo.js、AndroidX…）的许可见 [`docs/THIRD_PARTY.md`](docs/THIRD_PARTY.md)
 - **应用图标是占位图**（`app/res/drawable/ic_launcher_placeholder.xml`，矢量绘制，无版权问题）。
   仓库不附带任何美术素材，换成自己的图标见 [`docs/ICON.md`](docs/ICON.md)
