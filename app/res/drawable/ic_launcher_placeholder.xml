@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  占位应用图标（矢量，任意分辨率清晰）。
+
+  ★ 为什么是占位而不是真图标：
+    本仓库不附带任何美术素材。原作者的图标是一张 AI 生成的图，
+    其中角色设计另有版权归属，不适合随源码一起分发。
+
+  ★ 怎么换成你自己的图标：见 docs/ICON.md（三种方式，最快的是直接替换
+    这个文件里的 path，或者放一张 PNG 覆盖 mipmap）。
+
+  图形含义：一块圆角底座 + 上方一个圆点 —— 抽象成"桌面上蹲着一个小东西"，
+  不含任何第三方角色元素。
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- 底色（深青，与 App 强调色一致） -->
+    <path
+        android:fillColor="#2A6B6B"
+        android:pathData="M0,0h108v108h-108z"/>
+
+    <!-- 底座：圆角方块 -->
+    <path
+        android:fillColor="#F2F2F7"
+        android:pathData="M32,62 h44 a8,8 0 0 1 8,8 v6 a8,8 0 0 1 -8,8 h-44 a8,8 0 0 1 -8,-8 v-6 a8,8 0 0 1 8,-8 z"/>
+
+    <!-- 头：圆 -->
+    <path
+        android:fillColor="#F2F2F7"
+        android:pathData="M54,26 m-16,0 a16,16 0 1,0 32,0 a16,16 0 1,0 -32,0"/>
+
+    <!-- 两眼 -->
+    <path
+        android:fillColor="#2A6B6B"
+        android:pathData="M48,24 m-2.6,0 a2.6,2.6 0 1,0 5.2,0 a2.6,2.6 0 1,0 -5.2,0"/>
+    <path
+        android:fillColor="#2A6B6B"
+        android:pathData="M60,24 m-2.6,0 a2.6,2.6 0 1,0 5.2,0 a2.6,2.6 0 1,0 -5.2,0"/>
+</vector>

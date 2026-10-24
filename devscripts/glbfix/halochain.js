@@ -1,0 +1,30 @@
+const fs = require('fs');
+const buf = fs.readFileSync(process.argv[2] || './model.glb');
+const l0 = buf.readUInt32LE(12);
+const g = JSON.parse(buf.slice(20, 20 + l0).toString('utf8'));
+const N=g.nodes.length;
+const parent=new Array(N).fill(-1);
+g.nodes.forEach((n,i)=>(n.children||[]).forEach(c=>parent[c]=i));
+function chain(i){ let c=[],k=i; while(k>=0){ c.push(k+':'+g.nodes[k].name); k=parent[k]; if(c.length>20)break; } return c.join(' <- '); }
+console.log('node193 chain: '+chain(193));
+console.log('node204 chain: '+chain(204));
+console.log('node195 chain: '+chain(195));
+console.log('node8   chain: '+chain(8));
+console.log('\n=== node193 CH0335_Halo 定义 ===');
+console.log(JSON.stringify(g.nodes[193]));
+console.log('\n=== node204 CH0335_Halo（mesh 载体）定义 ===');
+console.log(JSON.stringify(g.nodes[204]));
+console.log('\n=== scene roots 数量 & 是否都被 children 引用 ===');
+const referenced = new Set();
+g.nodes.forEach(n=>(n.children||[]).forEach(c=>referenced.add(c)));
+const roots = [];
+for (let i=0;i<N;i++) if (!referenced.has(i)) roots.push(i);
+console.log('  实际无父节点: ' + roots.map(i=>i+':'+g.nodes[i].name).join(', '));
+console.log('  scene.nodes  = ' + g.scenes[0].nodes.map(i=>i+':'+g.nodes[i].name).join(', '));
+console.log('\n=== 每个 mesh 节点在"无父"时的归属 ===');
+g.nodes.forEach((n,i)=>{ if (n.mesh===undefined) return;
+  const inScene = g.scenes[0].nodes.includes(i);
+  const isRoot = roots.includes(i);
+  console.log('  node'+String(i).padStart(3)+' '+String(n.name).padEnd(24)
+    +' inSceneRoots='+inScene+' 无父='+isRoot+' 父='+(parent[i]>=0?g.nodes[parent[i]].name:'-'));
+});

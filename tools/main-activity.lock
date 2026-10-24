@@ -1,0 +1,70 @@
+# MainActivity 基线（禁止新增功能，只允许删除/精简）
+# 由 tools/guard-main-activity.sh --update 生成
+LINES=1662
+---SIGS---
+final EditText apiKey = field(
+final EditText apiPath = field(
+final EditText baseUrl = field(
+final EditText field = new EditText(
+final EditText model = field(
+final EditText name = field(
+final EditText searchBox = new EditText(
+final LinearLayout container = new LinearLayout(
+final LinearLayout resultBox = new LinearLayout(
+final TextView counter = new TextView(
+final android.app.AlertDialog loadingDialog = new android.app.AlertDialog.Builder(
+private Button miniButton(
+private Button primaryButton(
+private Button secondaryButton(
+private EditText field(
+private GradientDrawable glass(
+private LinearLayout card(
+private SeekBar seek(
+private SeekBar.OnSeekBarChangeListener onSeek(
+private String builtinIconText(
+private String formatSize(
+private TextView body(
+private TextView hint(
+private TextView label(
+private TextView sectionTitle(
+private TextView subtitle(
+private TextView title(
+private View buildUi(
+private View mcpCard(
+private View petCard(
+private View petThumbnail(
+private android.graphics.drawable.Drawable underlineDrawable(
+private boolean zipDirectory(
+private int builtinIconColor(
+private int dp(
+private void applyAppearanceNow(
+private void confirmDeletePet(
+private void confirmDeleteProvider(
+private void ensureOverlayPermission(
+private void exportCurrent(
+private void exportPet(
+private void hideGuideLines(
+private void onBuiltinClick(
+private void openMcpEditor(
+private void openOverlaySettings(
+private void pickImport(
+private void refreshMcpList(
+private void refreshMemories(
+private void refreshPetLabel(
+private void refreshPetList(
+private void refreshProviderList(
+private void requestLocationPermission(
+private void restartOverlay(
+private void scheduleAppearanceApply(
+private void showBuiltinInfo(
+private void showBuiltinMemoryInfo(
+private void showGuideLines(
+private void showMcpMenu(
+private void showMemoryEditor(
+private void showModelListContent(
+private void showModelListPage(
+private void showPetMenu(
+private void showProviderEditor(
+private void startOverlayService(
+private void toast(
+private void usePet(

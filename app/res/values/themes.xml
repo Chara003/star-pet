@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="@android:style/Theme.Material.Light.NoActionBar">
+        <item name="android:windowBackground">#FFF8F7FC</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <!-- ★ 预测性返回（跟手动画）需要窗口支持 Activity 过渡。
+             裸 Theme.Material.Light.NoActionBar 不带这个开关，
+             而 Material Components 系的主题自带 —— 这就是
+             "同系统上别的 App 有跟手动画、我们没有"的可能差异点。
+             加上后系统才有资格播跨 Activity 的返回动画。 -->
+        <item name="android:windowActivityTransitions">true</item>
+        <item name="android:windowContentTransitions">true</item>
+    </style>
+</resources>

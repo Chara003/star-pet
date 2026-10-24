@@ -1,0 +1,22 @@
+const fs = require('fs');
+const buf = fs.readFileSync(process.argv[2] || './model.glb');
+const l0 = buf.readUInt32LE(12);
+const g = JSON.parse(buf.slice(20, 20 + l0).toString('utf8'));
+const N = g.nodes.length;
+console.log('=== node1 CH0335_Mesh 的 TRS ===');
+const n1 = g.nodes[1];
+console.log('  T=', JSON.stringify(n1.translation), ' R=', JSON.stringify(n1.rotation), ' S=', JSON.stringify(n1.scale));
+const q = n1.rotation||[0,0,0,1];
+console.log('  旋转角 = ' + (2*Math.acos(Math.min(1,Math.abs(q[3])))*180/Math.PI).toFixed(2) + '°');
+console.log('\n=== node195 CH0335 的 TRS ===');
+const n195 = g.nodes[195];
+console.log('  T=', JSON.stringify(n195.translation), ' R=', JSON.stringify(n195.rotation), ' S=', JSON.stringify(n195.scale));
+console.log('  children=', JSON.stringify(n195.children||[]));
+console.log('\n=== 哪些 node 同时在 skins.joints 里 ===');
+const jointSet = new Set();
+g.skins.forEach((s,si)=>s.joints.forEach(j=>jointSet.add(j)));
+[0,1,7,8,147,195,200,201,202,203,204].forEach(i=>{
+  console.log('  node'+String(i).padStart(3)+' '+String(g.nodes[i].name).padEnd(24)+' 是joint? '+jointSet.has(i));
+});
+console.log('\n=== 所有 mesh 的 name（meshes[].name） ===');
+g.meshes.forEach((m,i)=>console.log('  mesh'+String(i).padStart(2)+' name="'+m.name+'" prims='+m.primitives.length));

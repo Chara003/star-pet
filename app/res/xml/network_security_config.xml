@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  网络安全配置。
+
+  ★ 为什么默认禁止明文 HTTP：
+    App 要连 AI 提供商、MCP 服务器、翻译服务，全是公网 HTTPS。
+    如果整个 App 允许 cleartext，那么在公共 Wi-Fi 上任何一次劫持
+    都可能把「请求头里的 API Key」直接读走。
+
+  ★ 但确实有人要连本地 / 内网服务（Ollama、LM Studio、自建网关），
+    那些通常就是 http://192.168.x.x:11434 或 http://127.0.0.1:8080。
+    所以这里开了两个白名单域：
+      127.0.0.1 / localhost  —— 本机回环
+      10.0.2.2               —— Android 模拟器访问宿主机的固定地址
+    内网网段（192.168.*）没法用通配符写在这里，因为它只支持域名/精确 IP。
+    要连内网服务器，把你的地址加到下面的 <domain> 里，或者把那台服务
+    换成 HTTPS（Caddy / Nginx 一条命令就能签本地证书）。
+
+  ★ 注意：Android 7.0+ 默认就不信任用户安装的 CA 证书，
+    所以这里不需要额外处理"抓包信任"的问题。
+-->
+<network-security-config>
+    <base-config cleartextTrafficPermitted="false">
+        <trust-anchors>
+            <certificates src="system"/>
+        </trust-anchors>
+    </base-config>
+
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="false">127.0.0.1</domain>
+        <domain includeSubdomains="false">localhost</domain>
+        <domain includeSubdomains="false">10.0.2.2</domain>
+    </domain-config>
+</network-security-config>

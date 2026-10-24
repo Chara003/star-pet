@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- ===== 旧 key（草稿期配色，保留只为不破坏尚未重构的页面） ===== -->
+    <color name="glass_surface">#F2FFFFFF</color>
+    <color name="glass_stroke">#1A000000</color>
+    <color name="accent">#FF4C6EF5</color>
+    <color name="text_primary">#FF1B1B1F</color>
+    <color name="text_secondary">#FF6B6B74</color>
+
+    <!-- ===== 新规范（见 ui/theme/UiTheme.java） =====
+         这些值必须与 UiTheme 里的常量一致；改一处就要改两处。 -->
+    <color name="ui_bg">#FFF2F2F7</color>
+    <color name="ui_card">#FFFFFFFF</color>
+    <color name="ui_accent">#FF2A6B6B</color>
+    <color name="ui_accent_pressed">#FF225858</color>
+    <color name="ui_off">#FFE5E5EA</color>
+    <color name="ui_off_stroke">#FFC8CCCC</color>
+    <color name="ui_text_primary">#FF1A1A1A</color>
+    <color name="ui_text_secondary">#FF7A7A7A</color>
+    <color name="ui_divider">#FFEFEFF2</color>
+    <color name="ui_section">#FF5F7C7C</color>
+    <color name="ui_subtle">#FFEFEFF2</color>
+</resources>
