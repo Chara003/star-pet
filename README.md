@@ -217,3 +217,5 @@ devscripts/                     开发期用过的一次性分析脚本（不参
 - **应用图标是占位图**（`app/res/drawable/ic_launcher_placeholder.xml`，矢量绘制，无版权问题）。
   仓库不附带任何美术素材，换成自己的图标见 [`docs/ICON.md`](docs/ICON.md)
 - 仓库内不含任何模型/动作素材，自备素材的版权由使用者自行负责
+
+[![GitHub stars](https://img.shields.io/github/stars/Chara003/star-pet?style=flat-square&color=yellow)](https://github.com/Chara003/star-pet)
