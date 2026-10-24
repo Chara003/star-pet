@@ -209,7 +209,7 @@ devscripts/                     开发期用过的一次性分析脚本（不参
 
 此项目的全部代码，构建，大量测试由Deepseek v4.1-Flash制作/测试，我只给出了必要的方向
 
-你可以让AI读DEVELOPMENT.md来继续这个项目（已经脱敏）
+你可以让AI读DEVELOPMENT.md来继续这个项目（纯手机端开发和编译）
 
 ---
 
